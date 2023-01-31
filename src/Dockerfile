@@ -3,7 +3,13 @@
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
+ENV ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true 
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV ASPNETCORE_URLS=http://+:80
+ENV DOTNET_USE_POLLING_FILE_WATCHER=1
+ENV NUGET_PACKAGES=/root/.nuget/fallbackpackages
+ENV NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages
+ENV DOTNET_EnableDiagnostics=0
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
@@ -14,7 +20,7 @@ WORKDIR "/src/Pet.Api"
 RUN dotnet build "Pet.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Pet.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Pet.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
