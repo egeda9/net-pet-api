@@ -199,9 +199,11 @@ The REST API to the pets api is described below.
 
 `GET /api/pet/:id`
 
+```
   curl -X 'GET' \
   '{host}/api/pet/df78a87b-2a21-4480-aa43-d90dd85ff8c9' \
   -H 'accept: application/json'
+```
 
 ### Response
 
@@ -226,7 +228,8 @@ The REST API to the pets api is described below.
 
 `POST /api/pet`
 
-    curl -X 'POST' \
+```
+  curl -X 'POST' \
 	'{host}/api/pet' \
 	-H 'accept: application/json' \
 	-H 'Content-Type: application/json' \
@@ -237,6 +240,7 @@ The REST API to the pets api is described below.
 	"sex": "Male",
 	"specie": "Dog"
 }'
+```
 
 ### Response
 
@@ -261,6 +265,7 @@ The REST API to the pets api is described below.
 
 `PUT /api/pet/:id`
 
+```
   curl -X 'PUT' \
   '{host}/api/pet/d9d7fe36-2892-483b-848a-641ba9a9a600' \
   -H 'accept: application/json' \
@@ -271,7 +276,8 @@ The REST API to the pets api is described below.
   "name": "Riley",
   "sex": "Male",
   "specie": "Dog"
-}'
+  }'
+```
 
 ### Response
 
@@ -296,9 +302,11 @@ The REST API to the pets api is described below.
 
 `DELETE /api/pet/:id`
 
+```
   curl -X 'DELETE' \
   '{host}/api/pet/d9d7fe36-2892-483b-848a-641ba9a9a600' \
   -H 'accept: application/json'
+```
 
 ### Response
 
