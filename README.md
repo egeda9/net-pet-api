@@ -134,3 +134,18 @@ var doc = await this._storageHandler.ReadAsync();
 
 - Deployment definition (per environment)
 - Environment variables definition (per environment)
+
+### gcloud - cloud run deployment
+
+#### Deploy to Cloud Run from source
+
+- In the source code directory (/src), deploy from source.
+
+```
+gcloud run deploy --source . --update-env-vars ENV=Development,STORAGE_FILE_PATH=./pets.json
+```
+
+- Specify service name
+- Enable **Artifact Registry API**
+- Select region **us-east1**
+- Allow unauthenticated invocations
