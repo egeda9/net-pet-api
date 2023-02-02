@@ -130,7 +130,7 @@ var doc = await this._storageHandler.ReadAsync();
 
 ```
 
-## [infra](infra/) folder and env settings
+## [infra](.github/workflows/) folder and env settings
 
 - Deployment definition (per environment)
 - Environment variables definition (per environment)
