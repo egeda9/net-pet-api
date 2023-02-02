@@ -14,7 +14,7 @@ namespace Pet.Api.Util.Implementations
         }
 
         /// <summary>
-        /// 
+        /// Read storage json file
         /// </summary>
         /// <returns></returns>
         public async Task<string> ReadAsync()
@@ -23,7 +23,7 @@ namespace Pet.Api.Util.Implementations
         }
 
         /// <summary>
-        /// 
+        /// Write to storage json file
         /// </summary>
         /// <param name="jsonData"></param>
         public async Task WriteAsync(string jsonData)
